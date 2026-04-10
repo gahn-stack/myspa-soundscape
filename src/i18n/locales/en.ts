@@ -19,6 +19,8 @@ export default {
     start: 'Start',
     cancel: 'Cancel',
     ended: 'Sleep timer ended',
+    guideTitle: 'Sleep Timer',
+    guideText: 'Set a timer to automatically fade out all sounds. Choose a preset or enter a custom duration (1–480 minutes). The audio will gently fade out over 30 seconds when the timer ends.',
   },
   mixes: {
     title: 'Saved Mixes',
@@ -27,6 +29,8 @@ export default {
     empty: 'No saved mixes yet',
     load: 'Load',
     delete: 'Delete',
+    guideTitle: 'Saved Mixes',
+    guideText: 'Save your current sound combination as a named mix. When you load a saved mix, any changes you make (volume adjustments, adding/removing sounds) are automatically saved back to that mix. The stop button will detach from the current mix.',
   },
   share: {
     button: 'Share ↗',
@@ -60,5 +64,20 @@ export default {
     fileLost: 'File needs to be re-uploaded after page reload.',
     reset: 'Reset',
     errorNotAudio: 'Not an audio file',
+  },
+  guide: {
+    next: 'Next',
+    back: 'Back',
+    done: 'Got it!',
+    step1Title: 'Welcome!',
+    step1Text: 'Create your perfect relaxation soundscape by layering natural sounds. Tap a sound circle to play it, tap again to stop.',
+    step2Title: 'Volume Control',
+    step2Text: 'Each sound has its own volume slider. Adjust individual sounds to create your ideal mix. The master volume at the top controls all sounds together.',
+    step3Title: 'Custom Sound Sources',
+    step3Text: 'Tap the gear icon on any sound to upload your own audio file. You can replace any built-in sound with a personal favorite.',
+    step4Title: 'Sleep Timer & Mixes',
+    step4Text: 'Use the Sleep Timer to automatically stop playback after a set time. Save your favorite combinations as named mixes to quickly reload them later.',
+    step5Title: 'Share & Enjoy',
+    step5Text: 'Share your soundscape with others using the Share button. Your current mix will be restored next time you visit. Enjoy your relaxation!',
   },
 };

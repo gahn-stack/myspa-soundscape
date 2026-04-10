@@ -19,6 +19,8 @@ export default {
     start: 'Start',
     cancel: 'Abbrechen',
     ended: 'Sleep-Timer beendet',
+    guideTitle: 'Sleep-Timer',
+    guideText: 'Stelle einen Timer ein, um alle Sounds automatisch auszublenden. Wähle eine Vorgabe oder gib eine eigene Dauer ein (1–480 Minuten). Der Ton wird in den letzten 30 Sekunden sanft ausgeblendet.',
   },
   mixes: {
     title: 'Gespeicherte Mixes',
@@ -27,6 +29,8 @@ export default {
     empty: 'Noch keine Mixes gespeichert',
     load: 'Laden',
     delete: 'Löschen',
+    guideTitle: 'Gespeicherte Mixes',
+    guideText: 'Speichere deine aktuelle Sound-Kombination als benannten Mix. Wenn du einen gespeicherten Mix lädst, werden alle Änderungen (Lautstärke, Sounds hinzufügen/entfernen) automatisch in diesen Mix gespeichert. Der Stop-Button löst die Verknüpfung zum aktuellen Mix.',
   },
   share: {
     button: 'Teilen ↗',
@@ -60,5 +64,20 @@ export default {
     fileLost: 'Datei muss nach einem Seitenladen neu hochgeladen werden.',
     reset: 'Zurücksetzen',
     errorNotAudio: 'Keine Audiodatei',
+  },
+  guide: {
+    next: 'Weiter',
+    back: 'Zurück',
+    done: 'Verstanden!',
+    step1Title: 'Willkommen!',
+    step1Text: 'Erstelle deine perfekte Entspannungs-Soundscape, indem du Naturklänge übereinanderlegst. Tippe auf einen Sound-Kreis, um ihn abzuspielen, und noch einmal, um ihn zu stoppen.',
+    step2Title: 'Lautstärkeregelung',
+    step2Text: 'Jeder Sound hat einen eigenen Lautstärkeregler. Passe die einzelnen Sounds an, um deinen idealen Mix zu erstellen. Die Gesamtlautstärke oben steuert alle Sounds gemeinsam.',
+    step3Title: 'Eigene Soundquellen',
+    step3Text: 'Tippe auf das Zahnrad-Symbol bei einem Sound, um eine eigene Audiodatei hochzuladen. Du kannst jeden eingebauten Sound durch einen persönlichen Favoriten ersetzen.',
+    step4Title: 'Sleep-Timer & Mixes',
+    step4Text: 'Nutze den Sleep-Timer, um die Wiedergabe nach einer bestimmten Zeit automatisch zu stoppen. Speichere deine Lieblingskombinationen als benannte Mixes, um sie schnell wieder zu laden.',
+    step5Title: 'Teilen & Genießen',
+    step5Text: 'Teile deine Soundscape mit anderen über den Teilen-Button. Dein aktueller Mix wird beim nächsten Besuch wiederhergestellt. Viel Entspannung!',
   },
 };
