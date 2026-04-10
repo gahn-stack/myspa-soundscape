@@ -2,6 +2,7 @@
 import { computed, ref } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { audioEngine } from '@/audio/engine';
+import SectionHelpModal from '@/components/SectionHelpModal.vue';
 import { sleepTimer } from '@/audio/timer';
 import { useSoundscapeStore } from '@/stores/soundscape.store';
 
@@ -88,6 +89,7 @@ function cancelTimer() {
   <div class="rounded-xl bg-myspa-turquoise p-3">
     <div class="flex items-center gap-2">
       <span class="font-overpass-semibold text-myspa-blue">{{$t('timer.title')}}</span>
+      <SectionHelpModal title-key="timer.guideTitle" text-key="timer.guideText" />
     </div>
 
     <div v-if="activePreset === null" class="mt-2">

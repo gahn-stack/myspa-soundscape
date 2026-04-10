@@ -3,6 +3,7 @@ import { computed, ref } from 'vue';
 import { TRACKS } from '@/audio/tracks';
 import { useAudioEngine } from '@/composables/useAudioEngine';
 import type { SavedMix } from '@/models/types';
+import SectionHelpModal from '@/components/SectionHelpModal.vue';
 import { useLibraryStore } from '@/stores/library.store';
 import { useSoundscapeStore } from '@/stores/soundscape.store';
 
@@ -76,24 +77,26 @@ function formatDate(timestamp: number): string {
 
 <template>
   <div class="rounded-xl bg-myspa-turquoise">
-    <button
-      class="flex w-full items-center justify-between p-4"
-      @click="toggleExpand"
-    >
-      <span class="font-overpass-semibold text-myspa-blue">{{$t('mixes.title')}}</span>
-      <svg
-        class="h-5 w-5 text-myspa-blue transition-transform duration-200"
-        :class="{ 'rotate-180': isExpanded }"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2.5"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      >
-        <polyline points="6 9 12 15 18 9" />
-      </svg>
-    </button>
+    <div class="flex items-center justify-between p-4">
+      <div class="flex items-center gap-2">
+        <span class="font-overpass-semibold text-myspa-blue">{{$t('mixes.title')}}</span>
+        <SectionHelpModal title-key="mixes.guideTitle" text-key="mixes.guideText" />
+      </div>
+      <button @click="toggleExpand">
+        <svg
+          class="h-5 w-5 text-myspa-blue transition-transform duration-200"
+          :class="{ 'rotate-180': isExpanded }"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <polyline points="6 9 12 15 18 9" />
+        </svg>
+      </button>
+    </div>
 
     <div class="px-4 pb-4">
       <div v-if="showNameInput" class="mb-3 flex gap-2">

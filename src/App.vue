@@ -4,20 +4,29 @@ import FooterBar from '@/components/FooterBar.vue';
 import HeaderBar from '@/components/HeaderBar.vue';
 import InstallPrompt from '@/components/InstallPrompt.vue';
 import MasterControls from '@/components/MasterControls.vue';
+import OnboardingGuide from '@/components/OnboardingGuide.vue';
 import SavedMixes from '@/components/SavedMixes.vue';
 import ShareButton from '@/components/ShareButton.vue';
 import SleepTimer from '@/components/SleepTimer.vue';
 import StartOverlay from '@/components/StartOverlay.vue';
 import TrackGrid from '@/components/TrackGrid.vue';
 
-const overlayDismissed = ref(false);
+const onboardingGuide = ref<InstanceType<typeof OnboardingGuide> | null>(null);
+
+function onOverlayFinished() {
+  onboardingGuide.value?.showIfFirstTime();
+}
+
+function onShowGuide() {
+  onboardingGuide.value?.show();
+}
 </script>
 
 <template>
   <div class="flex min-h-screen flex-col bg-white">
-    <StartOverlay v-if="!overlayDismissed" @start="overlayDismissed = true" />
+    <StartOverlay @finished="onOverlayFinished" />
 
-    <HeaderBar />
+    <HeaderBar @show-guide="onShowGuide" />
 
     <main class="flex flex-1 flex-col gap-6 pb-24 md:pb-6">
       <TrackGrid />
@@ -38,5 +47,6 @@ const overlayDismissed = ref(false);
 
     <FooterBar />
     <InstallPrompt />
+    <OnboardingGuide ref="onboardingGuide" />
   </div>
 </template>

@@ -3,8 +3,8 @@ import { ref } from 'vue';
 import SvgLogo from '@/components/SvgLogo.vue';
 import { useAudioEngine } from '@/composables/useAudioEngine';
 
-defineEmits<{
-  start: [];
+const emit = defineEmits<{
+  finished: [];
 }>();
 
 const audioEngineReady = ref(false);
@@ -26,6 +26,7 @@ async function handleStart() {
   } catch {}
   setTimeout(() => {
     dismissed.value = true;
+    emit('finished');
   }, 600);
 }
 </script>
