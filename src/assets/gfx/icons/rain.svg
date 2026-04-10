@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Rain cloud -->
+  <path d="M6 13a4 4 0 0 1 0-8 5 5 0 0 1 9.5-1A3.5 3.5 0 0 1 22 10.5"/>
+  <!-- Rain drops -->
+  <line x1="10" y1="16" x2="10" y2="19"/>
+  <line x1="14" y1="18" x2="14" y2="21"/>
+  <line x1="18" y1="16" x2="18" y2="19"/>
+  <line x1="12" y1="20" x2="12" y2="22"/>
+  <line x1="16" y1="20" x2="16" y2="22"/>
+</svg>

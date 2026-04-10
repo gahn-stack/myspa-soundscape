@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+/* ── Font-face declarations (copied from portal/src/assets/styles/global.scss) ── */
+
+@font-face {
+  font-family: "myspa-wellzone";
+  src: url("../fonts/myspa-wellzone.eot");
+  src:
+    url("../fonts/myspa-wellzone.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/myspa-wellzone.woff") format("woff"),
+    url("../fonts/myspa-wellzone.ttf") format("truetype"),
+    url("../fonts/myspa-wellzone.svg#myspa-wellzone") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "overpass-bold";
+  src: url("../fonts/overpass-bold.ttf");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "overpass-light";
+  src: url("../fonts/overpass-light.ttf");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "overpass-semibold";
+  src: url("../fonts/overpass-bold.ttf");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "overpass";
+  src: url("../fonts/Overpass-VariableFont_wght.ttf");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "toledo";
+  src: url("../fonts/toledo-serial-bold.ttf");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ── Custom design tokens (replaces tailwind.config.js) ── */
+
+@theme {
+  /* Colors — exact same palette as portal */
+  --color-myspa-blue: #1c2b6e;
+  --color-myspa-blue-sky: #9ac2e8;
+  --color-myspa-blue-alt: #3c4596;
+  --color-myspa-blue-shade: #cdd7ef;
+  --color-myspa-blue-light: #e4e9f6;
+  --color-myspa-turquoise: #bae1e8;
+  --color-myspa-turquoise-medium: #a5d8e1;
+  --color-myspa-turquoise-dark: #62c3d4;
+  --color-myspa-turquoise-light: #e0f3f6;
+  --color-myspa-selection-green: #58948f;
+  --color-myspa-disabled-grey: #b2b9ca;
+  --color-myspa-success: #15803d;
+  --color-myspa-error: #dc2626;
+  --color-myspa-pink: #f7c0bd;
+  --color-myspa-yellow: #fcc014;
+
+  /* Font families */
+  --font-myspa: "myspa-wellzone", sans-serif;
+  --font-overpass: "overpass";
+  --font-overpass-light: "overpass-light";
+  --font-overpass-bold: "overpass-bold";
+  --font-overpass-semibold: "overpass-semibold";
+  --font-toledo: "toledo";
+
+  /* Custom breakpoint */
+  --breakpoint-xs: 393px;
+}
+
+/* ── Utility classes (Tailwind v4 generates utilities from @theme vars automatically) ── */
+
+.font-toledo-wider {
+  font-family: var(--font-toledo) !important;
+  letter-spacing: 0.035em !important;
+}
