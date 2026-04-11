@@ -23,8 +23,6 @@ export function useShareUrl() {
     if (!navigator.share) return false;
     try {
       await navigator.share({
-        title: 'MySpa at Home — Soundscape',
-        text: 'Hör dir meine Klanglandschaft an!',
         url: generateShareUrl(),
       });
       return true;
