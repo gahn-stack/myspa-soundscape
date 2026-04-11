@@ -118,7 +118,7 @@ function cancelTimer() {
           min="1"
           max="480"
           :placeholder="$t('timer.customPlaceholder')"
-          class="w-24 rounded-lg border border-myspa-blue-shade px-3 py-2 font-overpass text-sm text-myspa-blue outline-none focus:border-myspa-turquoise-dark"
+          class="w-24 rounded-lg border-2 border-myspa-blue/40 px-3 py-2 font-overpass text-sm text-myspa-blue outline-none focus:border-myspa-turquoise-dark"
           @keyup.enter="startCustom"
         />
         <span class="font-overpass text-xs text-myspa-disabled-grey">{{$t('timer.customHint')}}</span>
