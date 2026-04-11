@@ -137,6 +137,14 @@ export function useAudioEngine(isInitialized: Ref<boolean>) {
     return session?.masterVolume ?? 0.5;
   }
 
+  function loadFromUrlParams(): { trackVolumes: Record<string, number>; masterVolume: number } | null {
+    const params = new URLSearchParams(window.location.search);
+    if (store.fromUrlParams(params)) {
+      return { trackVolumes: { ...store.trackVolumes }, masterVolume: store.masterVolume };
+    }
+    return null;
+  }
+
   watch(
     () => [store.activeTrackIds, store.trackVolumes, store.masterVolume] as const,
     () => persistSession(),
@@ -152,6 +160,7 @@ export function useAudioEngine(isInitialized: Ref<boolean>) {
     stopAll,
     restoreSession,
     getRestoredMasterVolume,
+    loadFromUrlParams,
     invalidateTrack: audioEngine.invalidateTrack.bind(audioEngine),
   };
 }

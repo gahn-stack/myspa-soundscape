@@ -8,7 +8,7 @@ const emit = defineEmits<{
 }>();
 
 const audioEngineReady = ref(false);
-const { init, playMix, restoreSession, getRestoredMasterVolume } = useAudioEngine(audioEngineReady);
+const { init, playMix, restoreSession, getRestoredMasterVolume, loadFromUrlParams } = useAudioEngine(audioEngineReady);
 
 const dismissed = ref(false);
 const transitioning = ref(false);
@@ -18,10 +18,15 @@ async function handleStart() {
   window.scrollTo({ top: 0, behavior: 'instant' });
   try {
     await init();
-    const restoredTracks = restoreSession();
-    if (restoredTracks) {
-      const masterVol = getRestoredMasterVolume();
-      await playMix(restoredTracks, masterVol);
+    const urlMix = loadFromUrlParams();
+    if (urlMix) {
+      await playMix(urlMix.trackVolumes, urlMix.masterVolume);
+    } else {
+      const restoredTracks = restoreSession();
+      if (restoredTracks) {
+        const masterVol = getRestoredMasterVolume();
+        await playMix(restoredTracks, masterVol);
+      }
     }
   } catch {}
   setTimeout(() => {

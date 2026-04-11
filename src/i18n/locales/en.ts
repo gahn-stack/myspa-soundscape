@@ -35,6 +35,7 @@ export default {
   share: {
     button: 'Share ↗',
     copied: 'Link copied!',
+    text: 'Check out my relaxation soundscape!',
   },
   install: {
     title: 'Install MySpa Sounds as an app',
